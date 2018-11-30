@@ -9,6 +9,11 @@
         </a>
       </li>
       <li>
+        <a href="#/home">
+          测试页面
+        </a>
+      </li>
+      <li>
         <a href="https://forum.vuejs.org" target="_blank">
           Forum
         </a>
