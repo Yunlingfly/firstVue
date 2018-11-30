@@ -16,6 +16,11 @@ export default new Router({
       path: '/home',
       component: resolve => require(['../components/page/Home.vue'], resolve),
       meta: { title: '主页' }
+    },
+    {
+      path: '/table',
+      component: resolve => require(['../components/page/Table.vue'], resolve),
+      meta: { title: '表格' }
     }
   ]
 })

@@ -14,6 +14,11 @@
         </a>
       </li>
       <li>
+        <a href="#/table">
+          测试表格
+        </a>
+      </li>
+      <li>
         <a href="https://forum.vuejs.org" target="_blank">
           Forum
         </a>
