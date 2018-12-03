@@ -49,19 +49,22 @@
         </div>
         <div id="click">
             <!-- 阻止单击事件冒泡 -->
-            <a v-on:click.stop="onClick"></a>
+            <a v-on:click.stop="onClick()"></a>
             <!-- 提交事件不再重载页面 -->
-            <form v-on:submit.prevent="onSubmit"></form>
+            <form v-on:submit.prevent="onClick()"></form>
             <!-- 修饰符可以串联  -->
-            <a v-on:click.stop.prevent="onClick"></a>
+            <a v-on:click.stop.prevent="onClick()"></a>
             <!-- 只有修饰符 -->
             <form v-on:submit.prevent></form>
             <!-- 添加事件侦听器时使用事件捕获模式 -->
-            <div v-on:click.capture="onClick">click.capture</div>
+            <div v-on:click.capture="onClick()">click.capture</div>
             <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
-            <div v-on:click.self="onClick">click.self</div>
+            <div v-on:click.self="onClick()">click.self</div>
             <!-- click 事件只能点击一次，2.1.4版本新增 -->
-            <a v-on:click.once="onClick">click.once</a>
+            <a v-on:click.once="onClick()">click.once</a>
+        </div>
+        <div>
+            <runoob message="4545"></runoob>
         </div>
     </div>
 </template>
@@ -83,6 +86,9 @@ export default {
         name: "name",
         sex: "sex",
         status: "1"
+      },
+      style1:{
+        background:"#ccc"
       }
     };
   },
@@ -111,6 +117,13 @@ export default {
       if (!value) return "";
       value = value.toString();
       return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  },
+  // components 自定义组件标签
+  components: {
+    runoob: {
+      props: ["message"],
+      template: '<h2>自定义组件!{{message}}</h2>'
     }
   }
 };
