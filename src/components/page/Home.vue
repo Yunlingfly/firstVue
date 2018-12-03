@@ -6,16 +6,16 @@
         <!-- v-bind 可以绑定属性，下面的代码表示当class1为true的时候class="class1" -->
         <div id="class1">
             <!-- v-model 可以实现双向数据绑定，例如：根据表单上的值，自动更新绑定的元素的值 -->
-            <label for="r1">修改颜色&显示段落</label><input type="checkbox" v-model="class1">
+            <label for="r1">修改颜色&显示段落</label><input type="checkbox" v-model="class2">
             <br>
-            <!-- v-bind 绑定属性中的值 -->
-            <div v-bind:class="{'class1': class1}">
+            <!-- v-bind 绑定属性中的值，如果有多个值用','分隔即可'，后一个可以覆盖前一个 -->
+            <div v-bind:class="{class1: class1,'class2':class2}">
                 v-bind:class 指令
             </div>
         </div>
         <!-- v-on 用来绑定事件 -->
         <div id="on">
-            <button v-on:click="onClick">点我</button>
+            <button v-on:click="onClick()">点我</button>
         </div>
         <div id="seen">
             <!-- v-if 根据值选择性显示 -->
@@ -35,7 +35,7 @@
             <!-- v-bind:href="url"的缩写 -->
             <a :href="url">yunlingfly</a>
             <!-- v-on:click="doSomething"的缩写 -->
-            <a @click="onClick">yunlingfly</a>
+            <a @click="onClick()">yunlingfly</a>
         </div>
         <div id="for">
             <table border="1">
@@ -47,12 +47,29 @@
                 </tr>
             </table>
         </div>
+        <div id="click">
+            <!-- 阻止单击事件冒泡 -->
+            <a v-on:click.stop="onClick"></a>
+            <!-- 提交事件不再重载页面 -->
+            <form v-on:submit.prevent="onSubmit"></form>
+            <!-- 修饰符可以串联  -->
+            <a v-on:click.stop.prevent="onClick"></a>
+            <!-- 只有修饰符 -->
+            <form v-on:submit.prevent></form>
+            <!-- 添加事件侦听器时使用事件捕获模式 -->
+            <div v-on:click.capture="onClick">click.capture</div>
+            <!-- 只当事件在该元素本身（而不是子元素）触发时触发回调 -->
+            <div v-on:click.self="onClick">click.self</div>
+            <!-- click 事件只能点击一次，2.1.4版本新增 -->
+            <a v-on:click.once="onClick">click.once</a>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
   name: "test",
+  // data 数据集
   data() {
     return {
       test: "",
@@ -60,26 +77,37 @@ export default {
       tableData: [],
       htmlMessage: "<h1>测试消息</h1>",
       message: "this is message",
-      class1: false,
+      class1: true,
+      class2: false,
       form: {
         name: "name",
         sex: "sex",
-        status:"1"
+        status: "1"
       }
     };
   },
+  // created 页面被创建时触发
   created() {
     this.getData();
   },
+  // computed 带有缓存的方法(当值改变时才会更新)
   computed: {},
+  // watch 可以监听属性的变化
+  watch: {
+    class2: function(newValue, oldValue) {
+      console.log("class2变化:" + oldValue + "-->" + newValue);
+    }
+  },
+  // methods 方法
   methods: {
     getData() {},
     onClick() {
       alert("这是一个弹窗");
     }
   },
+  // filters 过滤器
   filters: {
-    capitalize(value) {
+    capitalize: function(value) {
       if (!value) return "";
       value = value.toString();
       return value.charAt(0).toUpperCase() + value.slice(1);
@@ -90,7 +118,11 @@ export default {
 
 <style scoped>
 .class1 {
-  background: #444;
+  background: rgb(51, 46, 6);
+  color: #eee;
+}
+.class2 {
+  background: rgb(233, 12, 41);
   color: #eee;
 }
 </style>
