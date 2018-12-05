@@ -53,28 +53,6 @@
         </div>
       </flexbox-item>
       <flexbox-item>
-        <!-- <div class="weui-tabbar flex-demo-bottom">
-        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
-                        <span slot="label">
-              <i class="iconfont icon-geren">首页</i>
-            </span>
-        </a>
-        <a href="javascript:;" class="weui-tabbar__item">
-                        <span slot="label">
-              <i class="iconfont icon-geren">首页</i>
-            </span>
-        </a>
-        <a href="javascript:;" class="weui-tabbar__item">
-                        <span slot="label">
-              <i class="iconfont icon-geren">首页</i>
-            </span>
-        </a>
-        <a href="javascript:;" class="weui-tabbar__item">
-                        <span slot="label">
-              <i class="iconfont icon-geren">首页</i>
-            </span>
-        </a>
-    </div> -->
         <tabbar class="flex-demo-bottom">
           <tabbar-item selected>
             <span slot="label">
