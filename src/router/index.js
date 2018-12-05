@@ -21,6 +21,16 @@ export default new Router({
       path: '/table',
       component: resolve => require(['../components/page/Table.vue'], resolve),
       meta: { title: '表格' }
+    },
+    {
+      path: '/vux',
+      component: resolve => require(['../components/page/Vux.vue'], resolve),
+      meta: { title: 'Vux' }
+    },
+    {
+      path: '/index',
+      component: resolve => require(['../components/page/Index.vue'], resolve),
+      meta: { title: 'Index' }
     }
   ]
 })

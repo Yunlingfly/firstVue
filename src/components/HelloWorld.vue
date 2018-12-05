@@ -19,6 +19,16 @@
         </a>
       </li>
       <li>
+        <a href="#/vux">
+          测试vux
+        </a>
+      </li>
+      <li>
+        <a href="#/index">
+          测试vux-Index
+        </a>
+      </li>
+      <li>
         <a href="https://forum.vuejs.org" target="_blank">
           Forum
         </a>

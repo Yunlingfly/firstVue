@@ -5,6 +5,10 @@ import App from './App'
 import router from './router'
 import axios from 'axios'
 import ElementUI from 'element-ui'
+import { AlertPlugin, ToastPlugin } from 'vux'
+
+Vue.use(AlertPlugin)
+Vue.use(ToastPlugin)
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, { size: 'small' })
