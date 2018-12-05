@@ -13,7 +13,7 @@
       <flexbox-item>
         <div class="flex-demo-content">
           <grid :cols="3" :show-lr-borders="false">
-            <grid-item class="grid-content">
+            <grid-item class="grid-content" :link="{ path: '/businessCharter_1'}">
               <img src="../../assets/公务包机.png" style="height: 40px;width: 40px;">
               <span class="grid-center">公务包机</span>
             </grid-item>
@@ -56,7 +56,7 @@
         <tabbar class="flex-demo-bottom">
           <tabbar-item selected>
             <span slot="label">
-              <i class="iconfont icon-geren">首页</i>
+              <i class="iconfont icon-zhuye">首页</i>
             </span>
           </tabbar-item>
           <tabbar-item>
@@ -66,7 +66,7 @@
           </tabbar-item>
           <tabbar-item link="/">
             <span slot="label">
-              <i class="el-icon-tickets">全部</i>
+              <i class="iconfont icon-liebiaomoshi_kuai">全部</i>
             </span>
           </tabbar-item>
           <tabbar-item>

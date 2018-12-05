@@ -31,6 +31,11 @@ export default new Router({
       path: '/index',
       component: resolve => require(['../components/page/Index.vue'], resolve),
       meta: { title: 'Index' }
+    },
+    {
+      path: '/businessCharter_1',
+      component: resolve => require(['../components/page/BusinessCharter_1.vue'], resolve),
+      meta: { title: '飞行计划' }
     }
   ]
 })
