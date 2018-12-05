@@ -53,30 +53,50 @@
         </div>
       </flexbox-item>
       <flexbox-item>
-        <div class="flex-demo-bottom">
-          <tabbar>
-            <tabbar-item selected>
-              <span slot="label">
-                <i class="iconfont icon-geren">首页</i>
-              </span>
-            </tabbar-item>
-            <tabbar-item>
-              <span slot="label">
-                <i class="el-icon-news">媒体库</i>
-              </span>
-            </tabbar-item>
-            <tabbar-item link="/">
-              <span slot="label">
-                <i class="el-icon-tickets">全部</i>
-              </span>
-            </tabbar-item>
-            <tabbar-item>
-              <span slot="label">
-                <i class="iconfont icon-geren">我的</i>
-              </span>
-            </tabbar-item>
-          </tabbar>
-        </div>
+        <!-- <div class="weui-tabbar flex-demo-bottom">
+        <a href="javascript:;" class="weui-tabbar__item weui-bar__item_on">
+                        <span slot="label">
+              <i class="iconfont icon-geren">首页</i>
+            </span>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+                        <span slot="label">
+              <i class="iconfont icon-geren">首页</i>
+            </span>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+                        <span slot="label">
+              <i class="iconfont icon-geren">首页</i>
+            </span>
+        </a>
+        <a href="javascript:;" class="weui-tabbar__item">
+                        <span slot="label">
+              <i class="iconfont icon-geren">首页</i>
+            </span>
+        </a>
+    </div> -->
+        <tabbar class="flex-demo-bottom">
+          <tabbar-item selected>
+            <span slot="label">
+              <i class="iconfont icon-geren">首页</i>
+            </span>
+          </tabbar-item>
+          <tabbar-item>
+            <span slot="label">
+              <i class="el-icon-news">媒体库</i>
+            </span>
+          </tabbar-item>
+          <tabbar-item link="/">
+            <span slot="label">
+              <i class="el-icon-tickets">全部</i>
+            </span>
+          </tabbar-item>
+          <tabbar-item>
+            <span slot="label">
+              <i class="iconfont icon-geren">我的</i>
+            </span>
+          </tabbar-item>
+        </tabbar>
       </flexbox-item>
     </flexbox>
   </div>
@@ -130,11 +150,15 @@ Custom col:
 <!-- 设置局部背景色 -->
 <style lang="less">
 @import "~vux/src/styles/1px.less";
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .index {
   height: 100%;
   width: 100%;
-  position: fixed;
-  overflow-y:scroll;
 }
 .flex-demo-top {
   text-align: center;
@@ -150,11 +174,9 @@ Custom col:
   background-clip: padding-box;
   height: 100%;
 }
-flex-demo-bottom {
+.flex-demo-bottom {
   position: fixed;
-  top: 0px;
   left: 0px;
-  right: 0px;
   bottom: 0px;
   margin: auto;
 }
@@ -173,7 +195,7 @@ flex-demo-bottom {
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
 }
-grid-content {
+.grid-content {
   display: block;
   text-align: center;
   color: #666;
