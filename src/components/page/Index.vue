@@ -13,7 +13,7 @@
       <flexbox-item>
         <div class="flex-demo-content">
           <grid :cols="3" :show-lr-borders="false">
-            <grid-item class="grid-content" :link="{ path: '/businessCharter_1'}">
+            <grid-item class="grid-content" :link="{ path: '/businessCharter/businessCharter_1'}">
               <img src="../../assets/公务包机.png" style="height: 40px;width: 40px;">
               <span class="grid-center">公务包机</span>
             </grid-item>
