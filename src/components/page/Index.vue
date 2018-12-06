@@ -109,22 +109,6 @@ export default {
 };
 </script>
 
-<i18n>
-Horizontal:
-  zh-CN: 水平
-Honrizontal with no gutter:
-  zh-CN: 水平无间隙
-Vertical:
-  zh-CN: 垂直
-Vertical with no gutter:
-  zh-CN: 垂直无间隙
-Grid support (12 columns):
-  zh-CN: 网格（12列）
-Flexible grid:
-  zh-CN: 弹性网格
-Custom col:
-  zh-CN: 自定义列
-</i18n>
 <!-- 设置局部背景色 -->
 <style lang="less">
 @import "~vux/src/styles/1px.less";
