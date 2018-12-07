@@ -43,7 +43,7 @@
                         <el-input-number v-model="roundValue" :min="1" :max="10"></el-input-number>
                     </div>
                     <div style="padding:10px 20px">
-                        <x-button type="primary" style="border-radius:99px;">下一步</x-button>
+                        <x-button type="primary" style="border-radius:99px;" :link="{ path: '/businessCharter/businessCharter_2'}">下一步</x-button>
                     </div>
                 </div>
                 <div v-else-if="topIndex==2">这是往返界面</div>

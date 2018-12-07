@@ -41,6 +41,11 @@ export default new Router({
           path: 'businessCharter_1',
           component: resolve => require(['../components/page/BusinessCharter_1.vue'], resolve),
           meta: { title: '飞行计划' }
+        },
+        {
+          path: 'businessCharter_2',
+          component: resolve => require(['../components/page/BusinessCharter_2.vue'], resolve),
+          meta: { title: '选择机型' }
         }
       ]
     }
