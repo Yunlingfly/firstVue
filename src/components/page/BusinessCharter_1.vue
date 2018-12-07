@@ -24,8 +24,12 @@
                 <div v-if="topIndex==1">
                     <p style="padding:5px 0px;border-bottom:1px solid #ccc;"><img src="../../assets/小飞机图标.png" /> 行程信息</p>
                     <div style="padding:10px 20px">出发时间：
-                        <el-date-picker v-model="departureTime" type="datetime" placeholder="选择日期时间">
-                        </el-date-picker>
+                        <el-button round @click="changeDepartureTime()">{{ this.departureTime }}</el-button>
+                        <div v-transfer-dom>
+                            <popup v-model="showPopup">
+                                <datetime-view v-model="departureTime" :format="format"></datetime-view>
+                            </popup>
+                        </div>
                     </div>
                     <div style="padding:10px 20px">出发城市：
                         <el-button round @click="changeDeparturePlace()">{{ this.departurePlaceName }}</el-button>
@@ -38,7 +42,8 @@
                     <div style="padding:10px 20px">乘机人数：
                         <el-input-number v-model="roundValue" :min="1" :max="10"></el-input-number>
                     </div>
-                    <div style="padding:10px 20px"><x-button type="primary" style="border-radius:99px;">下一步</x-button>
+                    <div style="padding:10px 20px">
+                        <x-button type="primary" style="border-radius:99px;">下一步</x-button>
                     </div>
                 </div>
                 <div v-else-if="topIndex==2">这是往返界面</div>
@@ -78,7 +83,10 @@ import {
   ChinaAddressV4Data,
   Cell,
   Value2nameFilter as value2name,
-  Group
+  Group,
+  DatetimeView,
+  Popup,
+  TransferDom
 } from "vux";
 
 export default {
@@ -96,14 +104,19 @@ export default {
     SwiperItem,
     XAddress,
     Cell,
-    Group
+    Group,
+    DatetimeView,
+    Popup
+  },
+  directives: {
+    TransferDom
   },
   data() {
     return {
       active: 0,
       topIndex: 1,
       bottomIndex: 1,
-      departureTime: '',
+      departureTime: '1996-01-01 01:01',
       roundValue: 1,
       title: "默认为空",
       hideDistrict: true,
@@ -113,23 +126,28 @@ export default {
       arrivalPlaceName: "请选择",
       addressData: ChinaAddressV4Data,
       showAddress1: false,
-      showAddress2: false
+      showAddress2: false,
+      showPopup: false,
+      format: 'YYYY-MM-DD HH:mm'
     };
   },
-  watch: {
-    departurePlace: function(newValue, oldValue) {
-      console.log("departurePlace变化:" + oldValue + "-->" + newValue);
-    },
-    arrivalPlace: function(newValue, oldValue) {
-      console.log("arrivalPlace变化:" + oldValue + "-->" + newValue);
-    }
-  },
+//   watch: {
+//     departurePlace: function(newValue, oldValue) {
+//       console.log("departurePlace变化:" + oldValue + "-->" + newValue);
+//     },
+//     arrivalPlace: function(newValue, oldValue) {
+//       console.log("arrivalPlace变化:" + oldValue + "-->" + newValue);
+//     }
+//   },
   methods: {
     changeTopIndex(index) {
       this.topIndex = index;
     },
     changeBottomIndex(index) {
       this.bottomIndex = index;
+    },
+    changeDepartureTime(){
+        this.showPopup=true;
     },
     changeDeparturePlace() {
       this.showAddress1 = true;
