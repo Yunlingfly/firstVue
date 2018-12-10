@@ -9,7 +9,7 @@
               <img v-lazy="item.outsideView" class="images" />
             </router-link>
             <p>{{item.title}}
-              <router-link to="/businessCharter/businessCharter_3" style="float:right">查看预报价单</router-link>
+              <router-link to="/businessCharter/businessCharter_4" style="float:right">查看预报价单</router-link>
             </p>
           </div>
         </flexbox-item>
