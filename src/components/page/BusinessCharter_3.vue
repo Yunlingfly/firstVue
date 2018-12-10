@@ -42,14 +42,13 @@
         <flexbox-item>
           <div>
             <p style="padding:5px 0px;border-bottom:1px solid #ccc;"><img src="../../assets/小飞机图标.png" /> 内饰图</p>
-            <img v-lazy="item.outsideView" class="images" />
+            <img v-lazy="item.externalView" class="images" />
           </div>
         </flexbox-item>
         <flexbox-item>
           <div>
             <p style="padding:5px 0px;border-bottom:1px solid #ccc;"><img src="../../assets/小飞机图标.png" /> 客舱布局</p>
-            <img v-lazy="item.outsideView" class="images" />
-            <img v-lazy="item.outsideView" class="images" />
+            <img v-for="(value, key, index) in item.layoutView" :key="index" v-lazy="value" class="images" />
           </div>
         </flexbox-item>
       </flexbox>
@@ -74,6 +73,8 @@ export default {
         id: "111111",
         outsideView:
           "http://yunlingfly.cn/%E6%B9%BE%E6%B5%81G450_16%E5%BA%A7.jpg",
+        externalView:"http://yunlingfly.cn/%E8%B1%AA%E5%AE%A2900XP_8%E5%BA%A7.png",
+        layoutView:["http://yunlingfly.cn/%E8%B1%AA%E5%AE%A2900XP_8%E5%BA%A7.png","http://yunlingfly.cn/%E8%B1%AA%E5%AE%A2900XP_8%E5%BA%A7.png"],
         fallbackSrc: "http://placeholder.qiniudn.com/60x60/3cc51f/ffffff",
         title: "标题一",
         parameter: {
