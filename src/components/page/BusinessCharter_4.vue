@@ -6,7 +6,7 @@
         <flexbox-item>
           <div>
             <p style="padding:5px 0px;border-bottom:1px solid #ccc;"><img src="../../assets/小飞机图标.png" /> 航班信息</p>
-            <x-table :cell-bordered="false" style="background-color:#fff;" v-for="i in item.parameter" :key="getKeyId()" v-model="item">
+            <x-table :cell-bordered="false" style="background-color:#fff;" v-for="(i,index) in item.parameter" :key="index" v-model="item">
               <thead>
                 <tr style="background-color: #F7F7F7;">
                   <th>{{i.time}}</th>
@@ -68,7 +68,7 @@
 
 <script>
 import { Divider, Flexbox, FlexboxItem, XTable, XButton } from "vux";
-let keyId = 0;
+
 export default {
   components: {
     Divider,
@@ -110,11 +110,7 @@ export default {
       }
     };
   },
-  methods: {
-    getKeyId() {
-      return ++keyId;
-    }
-  }
+  methods: {}
 };
 </script>
 
