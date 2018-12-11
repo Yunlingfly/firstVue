@@ -56,6 +56,11 @@ export default new Router({
           path: 'businessCharter_4',
           component: resolve => require(['../components/page/BusinessCharter_4.vue'], resolve),
           meta: { title: '预报价单' }
+        },
+        {
+          path: 'businessCharter_5',
+          component: resolve => require(['../components/page/BusinessCharter_5.vue'], resolve),
+          meta: { title: '提交订单' }
         }
       ]
     }
