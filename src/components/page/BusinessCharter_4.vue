@@ -61,7 +61,7 @@
           </div>
         </flexbox-item>
       </flexbox>
-      <x-button type="primary" style="border-radius:99px;">下一步</x-button>
+      <router-link to="/businessCharter/businessCharter_5"><x-button type="primary" style="border-radius:99px;">下一步</x-button></router-link>
     </div>
   </div>
 </template>
